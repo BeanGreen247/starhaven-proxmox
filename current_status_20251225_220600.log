@@ -1,0 +1,849 @@
+=== Proxmox Status Report - Thu Dec 25 10:06:00 PM CET 2025 ===
+======================================
+pveversion -v
+proxmox-ve: 9.1.0 (running kernel: 6.17.4-1-pve)
+pve-manager: 9.1.4 (running version: 9.1.4/5ac30304265fbd8e)
+proxmox-kernel-helper: 9.0.4
+proxmox-kernel-6.17.4-1-pve-signed: 6.17.4-1
+proxmox-kernel-6.17: 6.17.4-1
+proxmox-kernel-6.17.2-2-pve-signed: 6.17.2-2
+proxmox-kernel-6.14.11-4-pve-signed: 6.14.11-4
+proxmox-kernel-6.14: 6.14.11-4
+proxmox-kernel-6.14.8-2-pve-signed: 6.14.8-2
+ceph-fuse: 19.2.3-pve1
+corosync: 3.1.9-pve2
+criu: 4.1.1-1
+frr-pythontools: 10.4.1-1+pve1
+ifupdown2: 3.3.0-1+pmx11
+intel-microcode: 3.20250812.1~deb13u1
+ksm-control-daemon: 1.5-1
+libjs-extjs: 7.0.0-5
+libproxmox-acme-perl: 1.7.0
+libproxmox-backup-qemu0: 2.0.1
+libproxmox-rs-perl: 0.4.1
+libpve-access-control: 9.0.5
+libpve-apiclient-perl: 3.4.2
+libpve-cluster-api-perl: 9.0.7
+libpve-cluster-perl: 9.0.7
+libpve-common-perl: 9.1.3
+libpve-guest-common-perl: 6.0.2
+libpve-http-server-perl: 6.0.5
+libpve-network-perl: 1.2.4
+libpve-rs-perl: 0.11.4
+libpve-storage-perl: 9.1.0
+libspice-server1: 0.15.2-1+b1
+lvm2: 2.03.31-2+pmx1
+lxc-pve: 6.0.5-3
+lxcfs: 6.0.4-pve1
+novnc-pve: 1.6.0-3
+proxmox-backup-client: 4.1.0-1
+proxmox-backup-file-restore: 4.1.0-1
+proxmox-backup-restore-image: 1.0.0
+proxmox-firewall: 1.2.1
+proxmox-kernel-helper: 9.0.4
+proxmox-mail-forward: 1.0.2
+proxmox-mini-journalreader: 1.6
+proxmox-offline-mirror-helper: 0.7.3
+proxmox-widget-toolkit: 5.1.5
+pve-cluster: 9.0.7
+pve-container: 6.0.18
+pve-docs: 9.1.2
+pve-edk2-firmware: 4.2025.05-2
+pve-esxi-import-tools: 1.0.1
+pve-firewall: 6.0.4
+pve-firmware: 3.17-2
+pve-ha-manager: 5.1.0
+pve-i18n: 3.6.6
+pve-qemu-kvm: 10.1.2-5
+pve-xtermjs: 5.5.0-3
+qemu-server: 9.1.3
+smartmontools: 7.4-pve1
+spiceterm: 3.4.1
+swtpm: 0.8.0+pve3
+vncterm: 1.9.1
+zfsutils-linux: 2.3.4-pve1
+---
+pvesh get /nodes/starhaven/status
+┌────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ key            │ value                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   │
+╞════════════════╪═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╡
+│ boot-info      │ {"mode":"efi","secureboot":1}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cpu            │ 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ cpuinfo        │ {"cores":6,"cpus":6,"flags":"fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid mpx rdseed adx smap clflushopt intel_pt xsaveopt xsavec xgetbv1 xsaves dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp vnmi md_clear flush_l1d arch_capabilities","hvm":"1","mhz":"3899.828","model":"Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz","sockets":1,"user_hz":100} │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ current-kernel │ {"machine":"x86_64","release":"6.17.4-1-pve","sysname":"Linux","version":"#1 SMP PREEMPT_DYNAMIC PMX 6.17.4-1 (2025-12-03T15:42Z)"}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ loadavg        │ ["0.64","0.69","0.72"]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ memory         │ {"available":25437433856,"free":25197072384,"total":67244871680,"used":41807437824}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ pveversion     │ pve-manager/9.1.4/5ac30304265fbd8e                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      │
+├────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ rootfs         │ {"avail":63323004928,"free":68493742080,"total":100861726720,"used":32367984640}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        │
+└────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+---
+pvesm status
+Name              Type     Status     Total (KiB)      Used (KiB) Available (KiB)        %
+backups            dir     active       960302096       325708096       585739576   33.92%
+local              dir     active        98497780        31609392        61838840   32.09%
+local-lvm      lvmthin     active       832356352       142332936       690023415   17.10%
+vm-2tb-hdd     zfspool     active      1885867244      1548304188       337563056   82.10%
+---
+lshw -short
+H/W path           Device          Class          Description
+=============================================================
+                                   system         Precision 3630 Tower (0871)
+/0                                 bus            0NNNCT
+/0/0                               memory         64KiB BIOS
+/0/9                               memory         64GiB System Memory
+/0/9/0                             memory         16GiB DIMM DDR4 Synchronous 2666 MHz (0.4 ns)
+/0/9/1                             memory         16GiB DIMM DDR4 Synchronous 2666 MHz (0.4 ns)
+/0/9/2                             memory         16GiB DIMM DDR4 Synchronous 2666 MHz (0.4 ns)
+/0/9/3                             memory         16GiB DIMM DDR4 Synchronous 2666 MHz (0.4 ns)
+/0/14                              memory         384KiB L1 cache
+/0/15                              memory         1536KiB L2 cache
+/0/16                              memory         9MiB L3 cache
+/0/17                              processor      Intel(R) Core(TM) i5-8500 CPU @ 3.00GHz
+/0/100                             bridge         8th Gen Core Processor Host Bridge/DRAM Registers
+/0/100/1                           bridge         6th-10th Gen Core Processor PCIe Controller (x16)
+/0/100/1/0                         display        GP107 [GeForce GTX 1050 Ti]
+/0/100/1/0.1                       multimedia     GP107GL High Definition Audio Controller
+/0/100/2                           display        CoffeeLake-S GT2 [UHD Graphics 630]
+/0/100/8                           generic        Xeon E3-1200 v5/v6 / E3-1500 v5 / 6th/7th/8th Gen Core Processor Gaussian Mixture Model
+/0/100/12                          generic        Cannon Lake PCH Thermal Controller
+/0/100/14                          bus            Cannon Lake PCH USB 3.1 xHCI Host Controller
+/0/100/14/0        usb1            bus            xHCI Host Controller
+/0/100/14/1        usb2            bus            xHCI Host Controller
+/0/100/14.2                        memory         RAM memory
+/0/100/15                          bus            Cannon Lake PCH Serial IO I2C Controller #0
+/0/100/16                          communication  Cannon Lake PCH HECI Controller
+/0/100/17          scsi1           storage        Cannon Lake PCH SATA AHCI Controller
+/0/100/17/0        /dev/cdrom      disk           DVD+-RW DU-8A5LH
+/0/100/17/1        /dev/sda        disk           2TB WDC WD20EZBX-00A
+/0/100/17/1/1      /dev/sda1       volume         1863GiB OS X ZFS partition or Solaris /usr partition
+/0/100/17/1/9      /dev/sda9       volume         8191KiB reserved partition
+/0/100/17/0.0.0    /dev/sdb        disk           1TB WDC WD10EZEX-08R
+/0/100/17/0.0.0/1  /dev/sdb1       volume         931GiB EXT4 volume
+/0/100/1b                          bridge         Cannon Lake PCH PCI Express Root Port #17
+/0/100/1b/0        /dev/nvme0      storage        CT1000P1SSD8
+/0/100/1b/0/0      hwmon1          disk           NVMe disk
+/0/100/1b/0/2      /dev/ng0n1      disk           NVMe disk
+/0/100/1b/0/1      /dev/nvme0n1    disk           1TB NVMe disk
+/0/100/1b/0/1/1    /dev/nvme0n1p1  volume         1006KiB BIOS Boot partition
+/0/100/1b/0/1/2    /dev/nvme0n1p2  volume         1023MiB Windows FAT volume
+/0/100/1b/0/1/3    /dev/nvme0n1p3  volume         929GiB LVM Physical Volume
+/0/100/1d                          bridge         Cannon Lake PCH PCI Express Root Port #9
+/0/100/1d.2                        bridge         Cannon Lake PCH PCI Express Root Port #11
+/0/100/1d.2/0                      bridge         ASM1083/1085 PCIe to PCI Bridge
+/0/100/1f                          bridge         C246 Chipset LPC/eSPI Controller
+/0/100/1f/0                        system         PnP device PNP0c02
+/0/100/1f/1                        system         PnP device PNP0c02
+/0/100/1f/2                        communication  PnP device PNP0501
+/0/100/1f/3                        system         PnP device PNP0c02
+/0/100/1f/4                        system         PnP device PNP0c02
+/0/100/1f/5                        system         PnP device PNP0c02
+/0/100/1f/6                        system         PnP device PNP0c02
+/0/100/1f/7                        system         PnP device PNP0c02
+/0/100/1f.3        card0           multimedia     Cannon Lake PCH cAVS
+/0/100/1f.3/0      input6          input          HDA Intel PCH Line Out
+/0/100/1f.3/1      input7          input          HDA Intel PCH Front Headphone
+/0/100/1f.4                        bus            Cannon Lake PCH SMBus Controller
+/0/100/1f.5                        bus            Cannon Lake PCH SPI Controller
+/0/100/1f.6        eno1            network        Ethernet Connection (7) I219-LM
+/1                 input0          input          Sleep Button
+/2                 input1          input          Power Button
+/3                 input2          input          Power Button
+/4                 input3          input          Video Bus
+/5                 input4          input          PC Speaker
+/6                 input5          input          Dell AIO WMI hotkeys
+---
+lsblk -o NAME,SIZE,TYPE,MODEL,SERIAL,STATE
+NAME                           SIZE TYPE MODEL                  SERIAL               STATE
+sda                            1.8T disk WDC WD20EZBX-00AYRA0   WD-WX62AC2RJVN0      running
+├─sda1                         1.8T part                                             
+└─sda9                           8M part                                             
+sdb                          931.5G disk WDC WD10EZEX-08RKKA0   WD-WMC1S7192642      running
+└─sdb1                       931.5G part                                             
+sr0                           1024M rom  PLDS DVD+/-RW DU-8A5LH PNDVVPLC0091O53KKA00 running
+zd0                            700G disk                                             
+└─zd0p1                        700G part                                             
+zd16                            60G disk                                             
+├─zd16p1                      58.1G part                                             
+└─zd16p2                       1.9G part                                             
+zd32                           250G disk                                             
+└─zd32p1                       250G part                                             
+zd48                          26.3G disk                                             
+├─zd48p1                      25.3G part                                             
+├─zd48p2                         1K part                                             
+└─zd48p5                       976M part                                             
+zd64                          26.3G disk                                             
+├─zd64p1                      24.9G part                                             
+├─zd64p2                         1K part                                             
+└─zd64p5                       1.4G part                                             
+zd80                           250G disk                                             
+├─zd80p1                     242.5G part                                             
+└─zd80p2                       7.5G part                                             
+zd96                            10G disk                                             
+├─zd96p1                         4M part                                             
+├─zd96p2                       256M part                                             
+└─zd96p3                       9.7G part                                             
+zd112                          120G disk                                             
+├─zd112p1                    118.1G part                                             
+└─zd112p3                      1.9G part                                             
+nvme0n1                      931.5G disk CT1000P1SSD8           2006E289868B         live
+├─nvme0n1p1                   1007K part                                             
+├─nvme0n1p2                      1G part                                             
+└─nvme0n1p3                    930G part                                             
+  ├─pve-swap                     8G lvm                                              running
+  ├─pve-root                    96G lvm                                              running
+  ├─pve-data_tmeta             8.1G lvm                                              running
+  │ └─pve-data-tpool         793.8G lvm                                              running
+  │   ├─pve-data             793.8G lvm                                              running
+  │   ├─pve-vm--104--disk--0   142G lvm                                              running
+  │   └─pve-vm--110--disk--0     8G lvm                                              running
+  └─pve-data_tdata           793.8G lvm                                              running
+    └─pve-data-tpool         793.8G lvm                                              running
+      ├─pve-data             793.8G lvm                                              running
+      ├─pve-vm--104--disk--0   142G lvm                                              running
+      └─pve-vm--110--disk--0     8G lvm                                              running
+---
+zpool list -v
+NAME                                         SIZE  ALLOC   FREE  CKPOINT  EXPANDSZ   FRAG    CAP  DEDUP    HEALTH  ALTROOT
+vm-2tb-hdd                                  1.81T   796G  1.04T        -         -    38%    42%  1.00x    ONLINE  -
+  ata-WDC_WD20EZBX-00AYRA0_WD-WX62AC2RJVN0  1.82T   796G  1.04T        -         -    38%  42.9%      -    ONLINE
+---
+zpool status -v
+  pool: vm-2tb-hdd
+ state: ONLINE
+  scan: scrub canceled on Mon Dec 22 07:53:51 2025
+config:
+
+	NAME                                        STATE     READ WRITE CKSUM
+	vm-2tb-hdd                                  ONLINE       0     0     0
+	  ata-WDC_WD20EZBX-00AYRA0_WD-WX62AC2RJVN0  ONLINE       0     0     0
+
+errors: No known data errors
+---
+smartctl --scan
+/dev/sda -d scsi # /dev/sda, SCSI device
+/dev/sdb -d scsi # /dev/sdb, SCSI device
+/dev/nvme0 -d nvme # /dev/nvme0, NVMe device
+---
+smartctl data
+=== /dev/sda ===
+smartctl 7.4 2024-10-15 r5620 [x86_64-linux-6.17.4-1-pve] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Device Model:     WDC WD20EZBX-00AYRA0
+Serial Number:    WD-WX62AC2RJVN0
+LU WWN Device Id: 5 0014ee 2c0404f39
+Firmware Version: 01.01A01
+User Capacity:    2,000,398,934,016 bytes [2.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    7200 rpm
+Form Factor:      3.5 inches
+TRIM Command:     Available, deterministic
+Device is:        Not in smartctl database 7.3/5528
+ATA Version is:   ACS-3 T13/2161-D revision 5
+SATA Version is:  SATA 3.1, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Thu Dec 25 22:06:04 2025 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x00)	Offline data collection activity
+					was never started.
+					Auto Offline Data Collection: Disabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(44700) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 176) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   2) minutes.
+SCT capabilities: 	       (0x3035)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x002f   200   200   051    Pre-fail  Always       -       0
+  3 Spin_Up_Time            0x0027   156   150   021    Pre-fail  Always       -       3200
+  4 Start_Stop_Count        0x0032   100   100   000    Old_age   Always       -       180
+  5 Reallocated_Sector_Ct   0x0033   200   200   140    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x002e   200   200   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   097   097   000    Old_age   Always       -       2493
+ 10 Spin_Retry_Count        0x0032   100   100   000    Old_age   Always       -       0
+ 11 Calibration_Retry_Count 0x0032   100   100   000    Old_age   Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       178
+192 Power-Off_Retract_Count 0x0032   200   200   000    Old_age   Always       -       93
+193 Load_Cycle_Count        0x0032   200   200   000    Old_age   Always       -       149
+194 Temperature_Celsius     0x0022   105   097   000    Old_age   Always       -       38
+196 Reallocated_Event_Count 0x0032   200   200   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   200   200   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0030   100   253   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x0008   100   253   000    Old_age   Offline      -       0
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+No self-tests have been logged.  [To run self-tests, use: smartctl -t]
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+The above only provides legacy SMART information - try 'smartctl -x' for more
+
+---
+=== /dev/sdb ===
+smartctl 7.4 2024-10-15 r5620 [x86_64-linux-6.17.4-1-pve] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Western Digital Blue
+Device Model:     WDC WD10EZEX-08RKKA0
+Serial Number:    WD-WMC1S7192642
+LU WWN Device Id: 5 0014ee 25eb10745
+Firmware Version: 80.00A80
+User Capacity:    1,000,204,886,016 bytes [1.00 TB]
+Sector Sizes:     512 bytes logical, 4096 bytes physical
+Rotation Rate:    7200 rpm
+Device is:        In smartctl database 7.3/5528
+ATA Version is:   ATA8-ACS (minor revision not indicated)
+SATA Version is:  SATA 3.0, 6.0 Gb/s (current: 6.0 Gb/s)
+Local Time is:    Thu Dec 25 22:06:04 2025 CET
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x82)	Offline data collection activity
+					was completed without error.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		(10620) seconds.
+Offline data collection
+capabilities: 			 (0x7b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   2) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 122) minutes.
+Conveyance self-test routine
+recommended polling time: 	 (   5) minutes.
+SCT capabilities: 	       (0x30b5)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x002f   200   200   051    Pre-fail  Always       -       0
+  3 Spin_Up_Time            0x0027   177   172   021    Pre-fail  Always       -       2150
+  4 Start_Stop_Count        0x0032   097   097   000    Old_age   Always       -       3103
+  5 Reallocated_Sector_Ct   0x0033   200   200   140    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x002e   200   200   000    Old_age   Always       -       0
+  9 Power_On_Hours          0x0032   050   050   000    Old_age   Always       -       36580
+ 10 Spin_Retry_Count        0x0032   100   100   000    Old_age   Always       -       0
+ 11 Calibration_Retry_Count 0x0032   100   100   000    Old_age   Always       -       0
+ 12 Power_Cycle_Count       0x0032   097   097   000    Old_age   Always       -       3077
+192 Power-Off_Retract_Count 0x0032   200   200   000    Old_age   Always       -       464
+193 Load_Cycle_Count        0x0032   200   200   000    Old_age   Always       -       2638
+194 Temperature_Celsius     0x0022   102   093   000    Old_age   Always       -       41
+196 Reallocated_Event_Count 0x0032   200   200   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0032   200   200   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0030   200   200   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x0032   200   200   000    Old_age   Always       -       0
+200 Multi_Zone_Error_Rate   0x0008   200   200   000    Old_age   Offline      -       0
+
+SMART Error Log Version: 1
+No Errors Logged
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Aborted by host               90%     32805         -
+# 2  Extended offline    Completed without error       00%     32122         -
+# 3  Vendor (0x50)       Completed without error       00%     22154         -
+# 4  Short offline       Completed without error       00%     22154         -
+# 5  Vendor (0x50)       Completed without error       00%     21454         -
+# 6  Short offline       Completed without error       00%     21454         -
+# 7  Vendor (0x50)       Completed without error       00%     20950         -
+# 8  Short offline       Completed without error       00%     20950         -
+# 9  Vendor (0x50)       Completed without error       00%     20490         -
+#10  Short offline       Completed without error       00%     20490         -
+#11  Vendor (0x50)       Completed without error       00%     20474         -
+#12  Short offline       Completed without error       00%     20474         -
+#13  Vendor (0x50)       Completed without error       00%     19731         -
+#14  Short offline       Completed without error       00%     19731         -
+#15  Vendor (0x50)       Completed without error       00%     19011         -
+#16  Short offline       Completed without error       00%     19011         -
+#17  Vendor (0x50)       Completed without error       00%     18668         -
+#18  Short offline       Completed without error       00%     18667         -
+#19  Vendor (0x50)       Completed without error       00%     17881         -
+#20  Short offline       Completed without error       00%     17881         -
+#21  Vendor (0x50)       Completed without error       00%     17358         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+The above only provides legacy SMART information - try 'smartctl -x' for more
+
+---
+=== /dev/nvme0n1 ===
+smartctl 7.4 2024-10-15 r5620 [x86_64-linux-6.17.4-1-pve] (local build)
+Copyright (C) 2002-23, Bruce Allen, Christian Franke, www.smartmontools.org
+
+=== START OF INFORMATION SECTION ===
+Model Number:                       CT1000P1SSD8
+Serial Number:                      2006E289868B
+Firmware Version:                   P3CR013
+PCI Vendor/Subsystem ID:            0xc0a9
+IEEE OUI Identifier:                0x00a075
+Controller ID:                      1
+NVMe Version:                       1.3
+Number of Namespaces:               1
+Namespace 1 Size/Capacity:          1,000,204,886,016 [1.00 TB]
+Namespace 1 Formatted LBA Size:     512
+Namespace 1 IEEE EUI-64:            00a075 20e289868b
+Local Time is:                      Thu Dec 25 22:06:04 2025 CET
+Firmware Updates (0x14):            2 Slots, no Reset required
+Optional Admin Commands (0x0016):   Format Frmw_DL Self_Test
+Optional NVM Commands (0x005e):     Wr_Unc DS_Mngmt Wr_Zero Sav/Sel_Feat Timestmp
+Log Page Attributes (0x0f):         S/H_per_NS Cmd_Eff_Lg Ext_Get_Lg Telmtry_Lg
+Maximum Data Transfer Size:         32 Pages
+Warning  Comp. Temp. Threshold:     70 Celsius
+Critical Comp. Temp. Threshold:     80 Celsius
+
+Supported Power States
+St Op     Max   Active     Idle   RL RT WL WT  Ent_Lat  Ex_Lat
+ 0 +     9.00W       -        -    0  0  0  0        5       5
+ 1 +     4.60W       -        -    1  1  1  1       30      30
+ 2 +     3.80W       -        -    2  2  2  2       30      30
+ 3 -   0.0500W       -        -    3  3  3  3     1000    1000
+ 4 -   0.0040W       -        -    4  4  4  4     6000    8000
+
+Supported LBA Sizes (NSID 0x1)
+Id Fmt  Data  Metadt  Rel_Perf
+ 0 +     512       0         0
+
+=== START OF SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+SMART/Health Information (NVMe Log 0x02)
+Critical Warning:                   0x00
+Temperature:                        31 Celsius
+Available Spare:                    100%
+Available Spare Threshold:          10%
+Percentage Used:                    44%
+Data Units Read:                    123,627,067 [63.2 TB]
+Data Units Written:                 104,286,045 [53.3 TB]
+Host Read Commands:                 1,216,651,608
+Host Write Commands:                1,276,576,856
+Controller Busy Time:               36,800
+Power Cycles:                       2,516
+Power On Hours:                     19,995
+Unsafe Shutdowns:                   478
+Media and Data Integrity Errors:    0
+Error Information Log Entries:      0
+Warning  Comp. Temperature Time:    0
+Critical Comp. Temperature Time:    0
+Temperature Sensor 1:               32 Celsius
+Temperature Sensor 2:               31 Celsius
+Temperature Sensor 5:               39 Celsius
+Thermal Temp. 1 Transition Count:   156
+Thermal Temp. 2 Transition Count:   5
+Thermal Temp. 1 Total Time:         65200
+Thermal Temp. 2 Total Time:         4097
+
+Error Information (NVMe Log 0x01, 16 of 256 entries)
+No Errors Logged
+
+Read Self-test Log failed: Invalid Field in Command (0x002)
+
+---
+---
+zfs list -o name,used,avail,compressratio
+NAME                           USED  AVAIL  RATIO
+vm-2tb-hdd                    1.44T   322G  1.00x
+vm-2tb-hdd/subvol-105-disk-0  1.32G  6.68G  1.00x
+vm-2tb-hdd/subvol-107-disk-0  1.69G  6.31G  1.00x
+vm-2tb-hdd/subvol-108-disk-0  1.28G  6.72G  1.00x
+vm-2tb-hdd/subvol-112-disk-0  7.05G  8.95G  1.00x
+vm-2tb-hdd/vm-100-disk-0       254G   568G  1.00x
+vm-2tb-hdd/vm-100-disk-1       711G   438G  1.00x
+vm-2tb-hdd/vm-101-disk-0      26.7G   322G  1.00x
+vm-2tb-hdd/vm-102-disk-0      26.7G   330G  1.00x
+vm-2tb-hdd/vm-103-disk-0      60.9G   376G  1.00x
+vm-2tb-hdd/vm-106-disk-0      10.2G   322G  1.00x
+vm-2tb-hdd/vm-106-disk-1       254G   507G  1.00x
+vm-2tb-hdd/vm-109-disk-0       122G   394G  1.00x
+---
+sensors
+lm-sensors not installed
+---
+qm list
+      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       
+       100 media-server         running    4096             250.00 1529      
+       101 dev.bean             running    8096              26.27 306813    
+       102 dev.remote           running    8192              26.27 1652      
+       103 ut99-server          running    2048              60.00 1749      
+       104 dev.server.wow       running    8096             142.04 322636    
+       106 navidrome-bean       running    2048              10.00 306836    
+       109 mc-server            running    8192             120.00 1982      
+---
+=== VM and LXC Details ===
+=== VM 100 Configuration ===
+affinity: 2,3,4,5
+agent: 1,fstrim_cloned_disks=1
+balloon: 4092
+boot: order=scsi0;ide2;net0
+cores: 4
+cpu: host,flags=-pcid;-spec-ctrl;+ssbd;-ibpb;-virt-ssbd;-amd-ssbd;-amd-no-ssb;+pdpe1gb;-hv-tlbflush;-hv-evmcs;+aes
+description: media@media-server%3A~$ ls -ld /mnt/media /mnt/media/Music%0A%0Adrwxrwxr-x  5 root  root     4096 Nov  2 19%3A43 /mnt/media%0Adrwxr-xr-x 37 media jellyfin 4096 Nov  2 21%3A26 /mnt/media/Music%0A%0Amedia@media-server%3A~$ stat -c '%25U%3A%25G %25a %25n' /mnt/media /mnt/media/Music%0A%0Aroot%3Aroot 775 /mnt/media%0Amedia%3Ajellyfin 755 /mnt/media/Music%0A%0Amedia@media-server%3A~$ getent passwd jellyfin || id jellyfin%0A%0Ajellyfin%3Ax%3A101%3A103%3AJellyfin default user%3A/var/lib/jellyfin%3A/bin/false%0A%0Amedia@media-server%3A~$ findmnt /mnt/media%0A%0ATARGET          SOURCE    FSTYPE OPTIONS%0A/mnt/media /dev/sdb1 ext4   rw,relatime%0A%0Amedia@media-server%3A~$ mount | grep /mnt/media%0A/dev/sdb1 on /mnt/media type ext4 (rw,relatime)%0A%0Amedia@media-server%3A~$ sudo journalctl -k | grep apparmor%0A[sudo] password for media%3A%0ANov 03 18%3A42%3A16 media-server kernel%3A LSM%3A initializing lsm=lockdown,capability,landlock,yama,apparmor,tomoyo,bpf,ipe,ima,evm%0ANov 03 18%3A42%3A16 media-server kernel%3A evm%3A security.apparmor%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.704%3A2)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="Discord" pid=580 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.708%3A3)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="1password" pid=579 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.708%3A4)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name=4D6F6E676F444220436F6D70617373 pid=581 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.708%3A5)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="QtWebEngineProcess" pid=582 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.708%3A6)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="balena-etcher" pid=587 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.712%3A7)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="busybox" pid=590 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.712%3A8)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="buildah" pid=589 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.712%3A9)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="brave" pid=588 comm="apparmor_parser"%0ANov 03 18%3A42%3A17 media-server kernel%3A audit%3A type=1400 audit(1762191737.716%3A10)%3A apparmor="STATUS" operation="profile_load" profile="unconfined" name="Xorg" pid=586 comm="apparmor_parser"%0A%0Amedia@media-server%3A~$ sudo journalctl -k | grep apparmor%0A%0Amedia@media-server%3A~$ sudo chown -R jellyfin%3Ajellyfin /mnt/media%0A%0Amedia@media-server%3A~$ sudo apt install acl%0A%0Amedia@media-server%3A~$ sudo setfacl -R -m u%3Ajellyfin%3Arwx /mnt/media%0A%0Al -d -m u%3Ajellyfin%3Arwx /mnt/media   %0A%0Asudo setfacl -d -m u%3Ajellyfin%3Arwx /mnt/media   %0A%0Amedia@media-server%3A~$ sudo systemctl restart jellyfin%0A%0Asudo chown -R jellyfin%3Ajellyfin /mnt/media%0A%0Asudo setfacl -R -m u%3Ajellyfin%3Arwx /mnt/media%0A%0Asudo setfacl -d -m u%3Ajellyfin%3Arwx /mnt/media%0A%0Asudo apt install acl%0A%0Asudo chown -R jellyfin%3Ajellyfin /mnt/media%0A%0Asudo setfacl -R -b /mnt/media%0A%0Asudo setfacl -R -m d%3Ag%3Ajellyfin%3Arwx /mnt/media%0A%0Asudo chmod g+rwx /mnt/media /mnt/media/*
+hostpci0: 0000:01:00.0
+hostpci1: 0000:01:00.1
+ide2: none,media=cdrom
+machine: q35
+memory: 4096
+meta: creation-qemu=10.0.2,ctime=1762083289
+name: media-server
+net0: virtio=BC:24:11:8B:6E:A4,bridge=vmbr0,firewall=1
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: vm-2tb-hdd:vm-100-disk-0,backup=0,cache=none,discard=on,iothread=1,replicate=0,size=250G
+scsi1: vm-2tb-hdd:vm-100-disk-1,backup=0,cache=none,iothread=1,replicate=0,size=700G
+scsihw: virtio-scsi-pci
+smbios1: uuid=2e4e072f-1372-40d2-81f4-e6147b5aedd8
+sockets: 1
+vmgenid: 375bfc73-0eaf-4c48-8f07-4e131bed36cb
+---
+=== VM 101 Configuration ===
+affinity: 3,4
+agent: 1
+balloon: 8090
+boot: order=scsi0
+cores: 2
+cpu: host
+cpuunits: 1024
+ide2: none,media=cdrom
+machine: q35
+memory: 8096
+meta: creation-qemu=10.0.2,ctime=1757724234
+name: dev.bean
+net0: virtio=BC:24:11:C5:F4:BE,bridge=vmbr0,rate=2
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: vm-2tb-hdd:vm-101-disk-0,iothread=1,size=26896M
+scsihw: virtio-scsi-single
+smbios1: uuid=8ef588a2-7707-47cd-81af-2f36d5b26430
+sockets: 1
+vga: vmware,memory=512
+vmgenid: 64cf0c88-5046-43c2-a28f-613e84cc5a66
+---
+=== VM 102 Configuration ===
+affinity: 1,2
+agent: 1
+balloon: 0
+boot: order=scsi0
+cores: 2
+cpu: host
+cpuunits: 512
+description: sudo mkdir -p /etc/ssl/guacd%0A%0Asudo openssl req -x509 -nodes -newkey rsa%3A2048 -days 825   -keyout /etc/ssl/guacd/guacd.key   -out /etc/ssl/guacd/guacd.crt   -subj "/CN=guacd"%0A%0Asudo chmod 600 /etc/ssl/guacd/guacd.key%0A%0Anano docker-compose.yml%0A%0Adocker compose down%0A%0Adocker compose up -d%0A%0Adocker logs -f guacd%0A%0Asudo apt purge libgtk* xserver-*
+ide2: none,media=cdrom
+machine: q35
+memory: 8192
+meta: creation-qemu=10.0.2,ctime=1757725098
+name: dev.remote
+net0: virtio=BC:24:11:25:0B:B7,bridge=vmbr0,rate=2
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: vm-2tb-hdd:vm-102-disk-0,iothread=1,size=26896M
+scsihw: virtio-scsi-single
+smbios1: uuid=41f85aeb-b786-4b7a-9aa7-c0d82d514013
+sockets: 1
+vmgenid: c2965e31-c2c7-47d7-9143-8ac4d1c806fb
+---
+=== VM 103 Configuration ===
+agent: 1
+balloon: 2040
+boot: order=scsi0;ide2;net0
+cores: 2
+cpu: host
+description: LinuxGSM - Unreal Tournament 99 - Version v25.2.0%0Ahttps%3A//linuxgsm.com/ut99server%0A%0Asudo systemctl status ut99server      # Live status + logs%0A%0Asudo systemctl stop ut99server        # Graceful stop%0A%0Asudo systemctl restart ut99server     # Restart%0A%0Asudo systemctl logs ut99server -f     # Tail logs
+ide2: local:iso/debian-13.1.0-amd64-netinst.iso,media=cdrom,size=783M
+machine: q35
+memory: 2048
+meta: creation-qemu=10.1.2,ctime=1765951999
+name: ut99-server
+net0: virtio=BC:24:11:C1:92:6C,bridge=vmbr0,firewall=1,rate=12
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: vm-2tb-hdd:vm-103-disk-0,backup=0,iothread=1,replicate=0,size=60G
+scsihw: virtio-scsi-single
+smbios1: uuid=7ed46088-5849-4caf-8f84-191946d8e319
+sockets: 1
+vmgenid: 9f66d3e2-ee2b-4f35-86fd-471aaf55b59f
+---
+=== VM 104 Configuration ===
+affinity: 1,2,3,5
+agent: 1
+balloon: 8092
+boot: order=scsi0
+cores: 4
+cpu: host
+description: sudo apt purge libgtk* xserver-*
+ide2: none,media=cdrom
+machine: q35
+memory: 8096
+meta: creation-qemu=10.0.2,ctime=1757726333
+name: dev.server.wow
+net0: virtio=BC:24:11:8F:16:EB,bridge=vmbr0,rate=5
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: local-lvm:vm-104-disk-0,iothread=1,size=145452M
+scsihw: virtio-scsi-single
+smbios1: uuid=32930d2c-4bcd-4a85-b3d5-63005d9d0bd4
+sockets: 1
+vmgenid: 093ccb94-7587-4c76-99ae-fb35005128cd
+---
+=== VM 106 Configuration ===
+affinity: 2,3
+agent: 1
+balloon: 0
+bios: ovmf
+boot: order=scsi0
+cores: 2
+cpu: host,flags=-pcid;-spec-ctrl;-ibpb;-amd-ssbd;-amd-no-ssb;-hv-tlbflush;-hv-evmcs;+aes
+memory: 2048
+meta: creation-qemu=10.0.2,ctime=1758431455
+name: navidrome-bean
+net0: virtio=BC:24:11:76:6C:7A,bridge=vmbr0
+numa: 0
+onboot: 1
+scsi0: vm-2tb-hdd:vm-106-disk-0,size=10G
+scsi1: vm-2tb-hdd:vm-106-disk-1,size=250G
+scsihw: virtio-scsi-pci
+smbios1: uuid=83f64fc4-4748-4299-95f0-4d1bd3b6de97
+sockets: 1
+vmgenid: a32ff749-a007-47c8-8b67-c1193ddf0e95
+---
+=== VM 109 Configuration ===
+affinity: 1,2,3,4,5
+agent: 1
+balloon: 0
+boot: order=scsi0;net0
+cores: 2
+cpu: host
+cpuunits: 512
+description: sudo apt update%0A%0Asudo apt install -y git python3 python3-dev python3-pip openjdk-21-jdk openjdk-21-jre python3.13-venv build-essential pkg-config python3-dev curl%0A%0Agit clone https%3A//gitlab.com/crafty-controller/crafty-installer-4.0.git && \%0A cd crafty-installer-4.0 && \%0A sudo ./install_crafty.sh
+machine: q35
+memory: 8192
+meta: creation-qemu=10.0.2,ctime=1762710324
+name: mc-server
+net0: virtio=BC:24:11:AC:6A:6A,bridge=vmbr0,firewall=1,rate=4
+numa: 0
+onboot: 1
+ostype: l26
+scsi0: vm-2tb-hdd:vm-109-disk-0,iothread=1,replicate=0,size=120G
+scsihw: virtio-scsi-single
+smbios1: uuid=f07dd7f8-326e-499c-8b2e-64ba1ea5feef
+sockets: 1
+vmgenid: 8f2b7076-e800-4208-9257-1621da7acf06
+---
+pct list
+VMID       Status     Lock         Name                
+105        running                 prometheus          
+107        running                 grafana             
+108        running                 proxexport          
+110        running                 kanboard            
+112        stopped                 authentik           
+---
+=== Container 105 Configuration ===
+arch: amd64
+cores: 2
+cpuunits: 256
+features: nesting=1
+hostname: prometheus
+memory: 512
+nameserver: 192.168.0.1
+net0: name=eth0,bridge=vmbr0,gw=192.168.0.1,hwaddr=BC:24:11:C2:97:F2,ip=192.168.0.248/24,ip6=dhcp,rate=8,type=veth
+onboot: 1
+ostype: ubuntu
+rootfs: vm-2tb-hdd:subvol-105-disk-0,replicate=0,size=8G
+swap: 128
+unprivileged: 1
+---
+=== Container 107 Configuration ===
+arch: amd64
+cores: 2
+cpuunits: 256
+features: nesting=1
+hostname: grafana
+memory: 512
+nameserver: 192.168.0.1
+net0: name=eth0,bridge=vmbr0,gw=192.168.0.1,hwaddr=BC:24:11:4F:26:59,ip=192.168.0.247/24,ip6=dhcp,rate=8,type=veth
+onboot: 1
+ostype: ubuntu
+rootfs: vm-2tb-hdd:subvol-107-disk-0,replicate=0,size=8G
+swap: 128
+unprivileged: 1
+---
+=== Container 108 Configuration ===
+arch: amd64
+cores: 1
+cpuunits: 128
+features: nesting=1
+hostname: proxexport
+memory: 512
+nameserver: 192.168.0.1
+net0: name=eth0,bridge=vmbr0,gw=192.168.0.1,hwaddr=BC:24:11:7B:A3:4B,ip=192.168.0.246/24,ip6=dhcp,rate=8,type=veth
+onboot: 1
+ostype: ubuntu
+rootfs: vm-2tb-hdd:subvol-108-disk-0,replicate=0,size=8G
+swap: 128
+unprivileged: 1
+---
+=== Container 110 Configuration ===
+arch: amd64
+cores: 1
+features: nesting=1
+hostname: kanboard
+memory: 192
+nameserver: 192.168.0.1
+net0: name=eth0,bridge=vmbr0,firewall=1,hwaddr=BC:24:11:76:4D:F5,ip=dhcp,ip6=dhcp,rate=2,type=veth
+onboot: 1
+ostype: debian
+rootfs: local-lvm:vm-110-disk-0,replicate=0,size=8G
+swap: 192
+unprivileged: 1
+---
+=== Container 112 Configuration ===
+arch: amd64
+cores: 2
+cpuunits: 256
+description: /etc/environment%0A%0Adocker compose up -d redis%0A%0Adocker compose up -d postgresql%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "CREATE DATABASE authentik;"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "CREATE USER authentik_db_user WITH PASSWORD 'authentik_postgresql_password';"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "GRANT ALL PRIVILEGES ON DATABASE authentik TO authentik_db_user;"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "ALTER DATABASE authentik OWNER TO authentik_db_user;"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO authentik_db_user;"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO authentik_db_user;"%0A%0Adocker exec -it postgresql psql -U "postgres_user" -c "GRANT CREATE ON SCHEMA public TO authentik_db_user;"%0A%0Adocker compose up -d authentik%0A%0Adocker compose up -d authentik-worker%0A%0A%0Ato run all services%0A%0Adocker compose up -d authentik%0A%0Adocker compose up -d authentik-worker%0A%0A%0A%0A%0A%0Ahttp%3A//192.168.0.245%3A9000/if/flow/initial-setup/%0A
+features: nesting=1
+hostname: authentik
+memory: 1256
+nameserver: 192.168.0.1
+net0: name=eth0,bridge=vmbr0,firewall=1,gw=192.168.0.1,hwaddr=BC:24:11:71:55:26,ip=192.168.0.245/24,ip6=dhcp,type=veth
+ostype: debian
+rootfs: vm-2tb-hdd:subvol-112-disk-0,replicate=0,size=16G
+swap: 256
+unprivileged: 1
+---
+=== VM and LXC Resource Usage ===
+┌─────────────────────────────────────┬─────────┬─────────────┬────────────────┬────────┬────────────┬────────────┬────────────┬─────────┬───────┬──────┬────────┬────────────┬────────────┬─────────────┬─────────────┬────────────────┬────────────┬────────────┬──────────────┬──────────────┬───────────┬────────────┬──────┬──────────┬─────┬───────────┬────────────┬──────┬──────────┬────────────┬──────┬───────────┐
+│ id                                  │ type    │ cgroup-mode │ content        │    cpu │       disk │   diskread │  diskwrite │ hastate │ level │ lock │ maxcpu │    maxdisk │     maxmem │         mem │     memhost │ name           │      netin │     netout │ network      │ network-type │ node      │ plugintype │ pool │ protocol │ sdn │ status    │ storage    │ tags │ template │     uptime │ vmid │ zone-type │
+╞═════════════════════════════════════╪═════════╪═════════════╪════════════════╪════════╪════════════╪════════════╪════════════╪═════════╪═══════╪══════╪════════╪════════════╪════════════╪═════════════╪═════════════╪════════════════╪════════════╪════════════╪══════════════╪══════════════╪═══════════╪════════════╪══════╪══════════╪═════╪═══════════╪════════════╪══════╪══════════╪════════════╪══════╪═══════════╡
+│ lxc/105                             │ lxc     │             │                │  0.01% │   1.32 GiB │  22.17 MiB │     0.00 B │         │       │      │      2 │   8.00 GiB │ 512.00 MiB │   63.94 MiB │      0.00 B │ prometheus     │ 211.70 MiB │   6.44 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  105 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ lxc/107                             │ lxc     │             │                │  0.08% │   1.69 GiB │  96.22 MiB │     0.00 B │         │       │      │      2 │   8.00 GiB │ 512.00 MiB │  130.80 MiB │      0.00 B │ grafana        │  26.92 MiB │  13.33 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  107 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ lxc/108                             │ lxc     │             │                │  0.01% │   1.28 GiB │  24.45 MiB │     0.00 B │         │       │      │      1 │   8.00 GiB │ 512.00 MiB │   75.82 MiB │      0.00 B │ proxexport     │ 342.70 MiB │ 328.53 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  108 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ lxc/110                             │ lxc     │             │                │  0.19% │   1.30 GiB │   4.98 GiB │ 208.16 MiB │         │       │      │      1 │   7.78 GiB │ 192.00 MiB │   72.70 MiB │      0.00 B │ kanboard       │  57.20 MiB │  51.78 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  110 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ lxc/112                             │ lxc     │             │                │  0.00% │     0.00 B │     0.00 B │     0.00 B │         │       │      │      2 │  16.00 GiB │   1.23 GiB │      0.00 B │      0.00 B │ authentik      │     0.00 B │     0.00 B │              │              │ starhaven │            │      │          │     │ stopped   │            │      │ 0        │         0s │  112 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ network/starhaven/zone/localnetwork │ network │             │                │        │            │            │            │         │       │      │        │            │            │             │             │                │            │            │ localnetwork │ zone         │ starhaven │            │      │          │     │ ok        │            │      │          │            │      │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ node/starhaven                      │ node    │           2 │                │ 24.26% │  30.15 GiB │            │            │         │       │      │      6 │  93.93 GiB │  62.63 GiB │   39.03 GiB │             │                │            │            │              │              │ starhaven │            │      │          │     │ online    │            │      │          │  1d 6h 33m │      │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/100                            │ qemu    │             │                │  0.20% │     0.00 B │   2.68 GiB │   1.10 GiB │         │       │      │      4 │ 250.00 GiB │   4.00 GiB │  929.87 MiB │    4.04 GiB │ media-server   │ 113.15 MiB │   2.80 GiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 33m │  100 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/101                            │ qemu    │             │                │  0.69% │     0.00 B │ 915.77 MiB │   2.04 GiB │         │       │      │      2 │  26.27 GiB │   7.91 GiB │    2.46 GiB │    2.99 GiB │ dev.bean       │  93.38 MiB │  17.69 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │ 17h 46m 5s │  101 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/102                            │ qemu    │             │                │  0.44% │     0.00 B │ 549.22 MiB │ 420.64 MiB │         │       │      │      2 │  26.27 GiB │   8.00 GiB │    1.83 GiB │    1.83 GiB │ dev.remote     │  58.41 MiB │  53.24 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  102 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/103                            │ qemu    │             │                │  0.49% │     0.00 B │ 342.72 MiB │   1.34 GiB │         │       │      │      2 │  60.00 GiB │   2.00 GiB │  694.21 MiB │  813.63 MiB │ ut99-server    │  79.80 MiB │  31.48 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  103 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/104                            │ qemu    │             │                │ 10.02% │     0.00 B │  18.53 GiB │   1.67 GiB │         │       │      │      4 │ 142.04 GiB │   7.91 GiB │    3.67 GiB │    5.64 GiB │ dev.server.wow │  82.91 MiB │  79.08 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  17h 6m 4s │  104 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/106                            │ qemu    │             │                │  0.93% │     0.00 B │ 960.30 MiB │  25.02 MiB │         │       │      │      2 │  10.00 GiB │   2.00 GiB │ 1005.96 MiB │ 1005.96 MiB │ navidrome-bean │  37.31 MiB │  46.40 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │ 17h 46m 4s │  106 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ qemu/109                            │ qemu    │             │                │  1.37% │     0.00 B │   5.18 GiB │   4.46 GiB │         │       │      │      2 │ 120.00 GiB │   8.00 GiB │    5.27 GiB │    5.27 GiB │ mc-server      │  86.03 MiB │  31.33 MiB │              │              │ starhaven │            │      │          │     │ running   │            │      │ 0        │  1d 6h 32m │  109 │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ storage/starhaven/backups           │ storage │             │ backup         │        │ 310.62 GiB │            │            │         │       │      │        │ 915.82 GiB │            │             │             │                │            │            │              │              │ starhaven │ dir        │      │          │     │ available │ backups    │      │          │            │      │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ storage/starhaven/local             │ storage │             │ vztmpl,iso     │        │  30.15 GiB │            │            │         │       │      │        │  93.93 GiB │            │             │             │                │            │            │              │              │ starhaven │ dir        │      │          │     │ available │ local      │      │          │            │      │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ storage/starhaven/local-lvm         │ storage │             │ images,rootdir │        │ 135.74 GiB │            │            │         │       │      │        │ 793.80 GiB │            │             │             │                │            │            │              │              │ starhaven │ lvmthin    │      │          │     │ available │ local-lvm  │      │          │            │      │           │
+├─────────────────────────────────────┼─────────┼─────────────┼────────────────┼────────┼────────────┼────────────┼────────────┼─────────┼───────┼──────┼────────┼────────────┼────────────┼─────────────┼─────────────┼────────────────┼────────────┼────────────┼──────────────┼──────────────┼───────────┼────────────┼──────┼──────────┼─────┼───────────┼────────────┼──────┼──────────┼────────────┼──────┼───────────┤
+│ storage/starhaven/vm-2tb-hdd        │ storage │             │ rootdir,images │        │   1.44 TiB │            │            │         │       │      │        │   1.76 TiB │            │             │             │                │            │            │              │              │ starhaven │ zfspool    │      │          │     │ available │ vm-2tb-hdd │      │          │            │      │           │
+└─────────────────────────────────────┴─────────┴─────────────┴────────────────┴────────┴────────────┴────────────┴────────────┴─────────┴───────┴──────┴────────┴────────────┴────────────┴─────────────┴─────────────┴────────────────┴────────────┴────────────┴──────────────┴──────────────┴───────────┴────────────┴──────┴──────────┴─────┴───────────┴────────────┴──────┴──────────┴────────────┴──────┴───────────┘
+---
+/etc/modprobe.d/zfs.conf
+options zfs zfs_arc_max=25769803776     # 24 GiB
+options zfs zfs_arc_min=8589934592      # 8 GiB
+---
+free -h
+               total        used        free      shared  buff/cache   available
+Mem:            62Gi        39Gi        23Gi        60Mi       1.0Gi        23Gi
+Swap:          8.0Gi        59Mi       7.9Gi
+---
+=== End of Report ===
